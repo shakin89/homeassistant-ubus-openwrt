@@ -1,0 +1,39 @@
+# Services configuration per OpenWrt Ubus Integration
+
+kick_device:
+  name: Kick Device
+  description: Disconnetti un dispositivo dalla rete WiFi
+  target:
+    entity:
+      domain: button
+      integration: openwrt_ubus
+  fields:
+    mac_address:
+      name: MAC Address
+      description: Indirizzo MAC del dispositivo da disconnettere
+      required: false
+      selector:
+        text:
+
+restart_service:
+  name: Restart Service  
+  description: Riavvia un servizio di sistema
+  target:
+    entity:
+      domain: switch
+      integration: openwrt_ubus
+  fields:
+    service_name:
+      name: Service Name
+      description: Nome del servizio da riavviare
+      required: true
+      selector:
+        select:
+          options:
+            - network
+            - dnsmasq
+            - firewall
+            - dropbear
+            - uhttpd
+            - odhcpd
+            - hostapd

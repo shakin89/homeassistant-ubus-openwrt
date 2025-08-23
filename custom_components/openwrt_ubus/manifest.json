@@ -1,0 +1,17 @@
+{
+  "domain": "openwrt_ubus",
+  "name": "OpenWrt Ubus Integration",
+  "version": "1.0.0",
+  "documentation": "https://github.com/shakin89/homeassistant-ubus-openwrt",
+  "issue_tracker": "https://github.com/shakin89/homeassistant-ubus-openwrt/issues",
+  "dependencies": [],
+  "codeowners": ["@shakin89"],
+  "requirements": ["requests>=2.25.0"],
+  "config_flow": true,
+  "dhcp": false,
+  "homekit": {},
+  "ssdp": [],
+  "zeroconf": [],
+  "after_dependencies": [],
+  "iot_class": "local_polling"
+}

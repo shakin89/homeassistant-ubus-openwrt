@@ -1,0 +1,33 @@
+{
+  "title": "Integrazione OpenWrt Ubus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configura Router OpenWrt",
+        "description": "Inserisci le credenziali per accedere al tuo router OpenWrt",
+        "data": {
+          "hostname": "Hostname/IP del router",
+          "username": "Nome utente",
+          "password": "Password",
+          "wireless_backend": "Backend wireless",
+          "dhcp_backend": "Backend DHCP"
+        }
+      },
+      "services": {
+        "title": "Seleziona Servizi da Gestire", 
+        "description": "Seleziona quali servizi vuoi controllare da Home Assistant",
+        "data": {
+          "managed_services": "Servizi gestiti"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi al router",
+      "invalid_auth": "Credenziali non valide",
+      "unknown": "Errore sconosciuto"
+    },
+    "abort": {
+      "already_configured": "Router già configurato"
+    }
+  }
+}
