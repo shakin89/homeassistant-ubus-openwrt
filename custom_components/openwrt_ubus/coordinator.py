@@ -96,7 +96,9 @@ class OpenWrtDataUpdateCoordinator(DataUpdateCoordinator):
         
         try:
             response = await self.hass.async_add_executor_job(
-                requests.post, url, json.dumps(payload), REQUEST_TIMEOUT
+                lambda: requests.post(url, data=json.dumps(payload), 
+                                     headers={'Content-Type': 'application/json'}, 
+                                     timeout=REQUEST_TIMEOUT)
             )
             
             if response.status_code == 200:
@@ -130,7 +132,9 @@ class OpenWrtDataUpdateCoordinator(DataUpdateCoordinator):
         
         try:
             response = await self.hass.async_add_executor_job(
-                requests.post, url, json.dumps(payload), REQUEST_TIMEOUT
+                lambda: requests.post(url, data=json.dumps(payload), 
+                                     headers={'Content-Type': 'application/json'}, 
+                                     timeout=REQUEST_TIMEOUT)
             )
             
             if response.status_code == 200:
